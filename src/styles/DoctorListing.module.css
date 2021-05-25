@@ -1,0 +1,9 @@
+.displayDoctors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 8rem;
+    border: 2px solid gray;
+    z-index: -10;
+  }

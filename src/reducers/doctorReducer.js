@@ -1,4 +1,4 @@
-import { GET_DOCTORS } from '../actions/appointmentAction';
+import { GET_DOCTORS } from '../actions/doctorAction';
 
 const initialState = {
   doctors: [],
