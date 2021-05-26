@@ -11,14 +11,15 @@ const DoctorComponent = (props) => {
       <div key={uniqueKey}>
         {/* <Link> */}
         <div className={Style.docImageBox}>
-          <img src={doctor.picture} alt="doctor.firstname" className={Style.img} />
+          <img src={doctor.picture} alt="doctor.full_name" className={Style.img} />
         </div>
-        <div>
-          <h2>{doctor.firstname}</h2>
-          <h2>{doctor.lastname}</h2>
+        <div className={Style.centerName}>
+          <h4 className={Style.noMargin}>{doctor.full_name}</h4>
+          <h5 className={Style.noMargin}>{doctor.specialty}</h5>
         </div>
-        <div>
-          <h3>{doctor.specialty}</h3>
+        <div className={Style.alignLocation}>
+          <h5 className={`${Style.noMargin} ${Style.addPadding}`}>Location:</h5>
+          <h5 className={Style.noMargin}>{doctor.location}</h5>
         </div>
         {/* </Link> */}
       </div>
@@ -31,9 +32,9 @@ export default DoctorComponent;
 DoctorComponent.propTypes = {
   doctor: PropTypes.shape({
     picture: PropTypes.string,
-    firstname: PropTypes.string,
-    lastname: PropTypes.string,
+    full_name: PropTypes.string,
     specialty: PropTypes.string,
+    location: PropTypes.string,
     id: PropTypes.number,
   }).isRequired,
 };

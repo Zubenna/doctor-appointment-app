@@ -1,9 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
 .displayDoctors {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-top: 8rem;
-    border: 2px solid gray;
-    z-index: -10;
-  }
+}
+
+.container {
+  border: 2px solid gray;
+  display: flex;
+}
+
+.textCenter {
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'lato' sans-serif; */
+}
+
+.noMargin {
+  margin: 0; 
+}
+
+.greyText {
+  color: #3634342d;
+  font-size: 1.2rem;
+  margin: 0;
+}

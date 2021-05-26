@@ -29,12 +29,18 @@ const DoctorListing = () => {
   }, []);
   console.log('from state', doctors);
   return (
-    <div>
-      <div className={Style.displayDoctors}>
-        <DoctorFilter />
-        {doctors.map((doctor) => (
-          <DoctorComponent key={doctor.id} doctor={doctor} />
-        ))}
+    <div className={Style.container}>
+      <DoctorFilter />
+      <div>
+        <div className={Style.textCenter}>
+          <h1 className={Style.noMargin}>Choose Experienced Doctor</h1>
+          <p className={Style.greyText}>Consultants with many years of experience</p>
+        </div>
+        <div className={Style.displayDoctors}>
+          {doctors.map((doctor) => (
+            <DoctorComponent key={doctor.id} doctor={doctor} />
+          ))}
+        </div>
       </div>
     </div>
   );
