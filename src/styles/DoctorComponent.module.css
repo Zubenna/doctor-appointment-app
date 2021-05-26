@@ -23,6 +23,10 @@
   /* color: #97BF0F; */
 }
 
+.text {
+  color:hsl(210, 22%, 49%);
+}
+
 .addPadding {
   padding-right: 0.2rem;
 }

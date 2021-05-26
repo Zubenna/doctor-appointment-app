@@ -11,15 +11,15 @@ const DoctorComponent = (props) => {
       <div key={uniqueKey}>
         {/* <Link> */}
         <div className={Style.docImageBox}>
-          <img src={doctor.picture} alt="doctor.full_name" className={Style.img} />
+          <img src={doctor.picture} alt={doctor.full_name} className={Style.img} />
         </div>
         <div className={Style.centerName}>
           <h4 className={Style.noMargin}>{doctor.full_name}</h4>
-          <h5 className={Style.noMargin}>{doctor.specialty}</h5>
+          <h5 className={`${Style.noMargin} ${Style.text}`}>{doctor.specialty}</h5>
         </div>
         <div className={Style.alignLocation}>
           <h5 className={`${Style.noMargin} ${Style.addPadding}`}>Location:</h5>
-          <h5 className={Style.noMargin}>{doctor.location}</h5>
+          <h5 className={`${Style.noMargin} ${Style.text}`}>{doctor.location}</h5>
         </div>
         {/* </Link> */}
       </div>

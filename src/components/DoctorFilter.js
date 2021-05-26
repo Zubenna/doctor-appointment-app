@@ -12,14 +12,16 @@ const DoctorFilter = (props) => {
 
   return (
     <div className={Style.filterBox}>
-      <h3>I am from Doctor Filter Component</h3>
-      <h3>Filter by Specialty</h3>
-      <button type="button" onClick={handleClick}>All</button>
-      <button type="button" onClick={handleClick}>Gynecologist</button>
-      <button type="button" onClick={handleClick}>Neurologist</button>
-      <button type="button" onClick={handleClick}>Paediatrician</button>
-      <button type="button" onClick={handleClick}>Surgeon</button>
-      <button type="button" onClick={handleClick}>Cardiologist</button>
+      <div className={Style.buttonPosition}>
+        <h3 className={Style.centerText}>Filter by Specialty</h3>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>All</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Gynecologist</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Neurologist</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Paediatrician</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Surgeon</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Cardiologist</button>
+        <button type="button" className={Style.buttonText} onClick={handleClick}>Appointments</button>
+      </div>
     </div>
   );
 };

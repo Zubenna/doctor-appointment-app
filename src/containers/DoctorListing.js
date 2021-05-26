@@ -6,6 +6,7 @@ import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
 import url from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
+import Slider from './Slider';
 
 const DoctorListing = () => {
   const doctors = useSelector((state) => state.allDoctors.doctors);
@@ -21,14 +22,12 @@ const DoctorListing = () => {
       .catch((error) => {
         const errorMsg = error.message;
         console.log('Error', errorMsg);
-      // dispatch(fetchAirlines(errorMsg));
       });
   };
 
   useEffect(() => {
     fetchList();
   }, []);
-  // console.log('from state', doctors);
 
   const handleFilter = (filter) => {
     dispatch(filterDoctors(filter));
@@ -47,6 +46,7 @@ const DoctorListing = () => {
           <h1 className={Style.noMargin}>Choose Experienced Doctor</h1>
           <p className={Style.greyText}>Consultants with many years of experience</p>
         </div>
+        <Slider doctors={doctors} />
         <div className={Style.displayDoctors}>
           {filteredDoctors().map((doctor) => (
             <DoctorComponent key={doctor.id} doctor={doctor} />

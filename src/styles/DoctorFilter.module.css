@@ -3,4 +3,21 @@
   min-width: 20%;
   max-width: 20%;
   background: chocolate;
+  /* margin-top: 6rem; */
+}
+
+.buttonPosition {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.buttonText {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.2rem;
+  /* margin-bottom: 1rem; */
+}
+
+.centerText {
+  text-align: center;
 }
