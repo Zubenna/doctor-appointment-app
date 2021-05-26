@@ -6,17 +6,22 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    /* width: 80%; */
+    margin-left: 3rem;
 }
 
 .container {
   border: 2px solid gray;
   display: flex;
+  /* width: 80%;
+  margin: 0 auto; */
 }
 
 .textCenter {
   text-align: center;
   margin-top: 8rem;
   margin-bottom: 2rem;
+  margin-left: 3rem;
   font-family: 'Exo 2', sans-serif;
   /* font-family: 'lato' sans-serif; */
 }

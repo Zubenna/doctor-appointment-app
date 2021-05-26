@@ -1,5 +1,5 @@
 const GET_DOCTORS = 'GET_DOCTORS';
-const FILTER_DOCTORS = 'FILTER_DOCTORS'
+const FILTER_DOCTORS = 'FILTER_DOCTORS';
 
 const displayDoctors = (doctors) => ({
   type: GET_DOCTORS,
@@ -11,4 +11,6 @@ const filterDoctors = (specialty) => ({
   payload: specialty,
 });
 
-export { GET_DOCTORS, FILTER_DOCTORS, displayDoctors, filterDoctors };
+export {
+  GET_DOCTORS, FILTER_DOCTORS, displayDoctors, filterDoctors,
+};

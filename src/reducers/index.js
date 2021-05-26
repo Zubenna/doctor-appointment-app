@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import filterReducer from '../reducers/filterReducer';
+import filterReducer from './filterReducer';
 import doctorsReducer from './doctorReducer';
 
 const rootReducer = combineReducers({

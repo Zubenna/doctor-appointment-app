@@ -1,5 +1,6 @@
 .filterBox {
   height: 50rem;
   min-width: 20%;
+  max-width: 20%;
   background: chocolate;
 }
