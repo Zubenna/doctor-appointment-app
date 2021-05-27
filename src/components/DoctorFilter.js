@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Style from '../styles/DoctorFilter.module.css';
 
 const DoctorFilter = (props) => {
@@ -12,6 +13,9 @@ const DoctorFilter = (props) => {
 
   return (
     <div className={Style.filterBox}>
+      <div>
+        <Link to="/">App Logo</Link>
+      </div>
       <div className={Style.buttonPosition}>
         <h3 className={Style.centerText}>Filter by Specialty</h3>
         <button type="button" className={Style.buttonText} onClick={handleClick}>All</button>

@@ -1,10 +1,10 @@
-import { GET_DOCTORS } from '../actions/doctorAction';
+import { GET_DOCTORS, SELECTED_DOCTOR } from '../actions/doctorAction';
 
 const initialState = {
   doctors: [],
 };
 
-const doctorsReducer = (state = initialState, { type, payload }) => {
+export const doctorsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_DOCTORS:
       return { ...state, doctors: payload };
@@ -13,4 +13,11 @@ const doctorsReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export default doctorsReducer;
+export const selectedDoctorReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case SELECTED_DOCTOR:
+      return { ...state, ...payload };
+    default:
+      return state;
+  }
+};

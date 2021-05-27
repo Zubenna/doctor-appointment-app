@@ -6,7 +6,7 @@ import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
 import url from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
-import Slider from './Slider';
+import Slider from '../components/Slider';
 
 const DoctorListing = () => {
   const doctors = useSelector((state) => state.allDoctors.doctors);

@@ -14,13 +14,12 @@
 
 .centerName {
   text-align: center;
+  margin-top: 1.2rem;
 }
 
 .noMargin {
   margin: 0;
   font-family: 'Exo 2', sans-serif;
-  /* color: #eee;; #262626; #97BF0F*/
-  /* color: #97BF0F; */
 }
 
 .text {
@@ -33,6 +32,29 @@
 
 .alignLocation {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+  text-align: center;
+  flex-direction: column;
+}
+
+.setLink {
+  text-decoration: none;
+  color: #000;
+}
+
+.setLine {
+  text-align: center;
+  margin: 0.8rem 0;
+  color: gray;
+}
+
+.socialHandle {
+  display: flex;
+  width: 50%;
+  margin: 0.6rem auto 1.2rem auto;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.socialColor {
+  color: rgb(214, 219, 219);
 }
