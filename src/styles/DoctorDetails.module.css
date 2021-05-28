@@ -60,4 +60,17 @@
 .grayBg {
   background: rgb(216, 213, 213);
 }
+
+.bookApmnt {
+  width: 100%;
+  background: #97BF0F;
+  padding: 0.4rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Exo 2', sans-serif;
+  border-radius: 8px;
+  position: relative;
+  top: 6rem;
+}
   

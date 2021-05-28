@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectedDoctor } from '../actions/doctorAction';
@@ -64,6 +64,9 @@ const DoctorDetails = () => {
               <span>Years of experience:</span>
               <p className={Style.noMargin}>{doctor.years_of_experience}</p>
             </div>
+            <Link to={' '} className={Style.bookApmnt}>
+              Book Appointment
+            </Link>
           </div>
         </div>
       </div>
