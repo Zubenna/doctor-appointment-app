@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div>
-    <h1>BOOKING AIR TICKETS MADE EASY</h1>
+    <h1>BOOK APPOINTMENT WITH A DOCTOR</h1>
     <div>
       <Link to="/login">
-        <button type="button" >Login</button>
+        <button type="button">Login</button>
       </Link>
-      <Link to="/register" >
-        <button type="button"></button>
+      <Link to="/signup">
+        <button type="button">Register</button>
       </Link>
     </div>
   </div>

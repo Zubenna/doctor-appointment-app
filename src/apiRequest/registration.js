@@ -1,16 +1,23 @@
 import axios from 'axios';
 import { patientApiRequest, patientApiSuccess, patientApiFailure } from '../actions/patientAction';
-import url from '../apiUrl/apiLink';
+import { url } from '../apiUrl/apiLink';
 
-const registration = patientData => dispatch => {
+const registration = (patientData) => (dispatch) => {
+  // console.log(patientData);
   dispatch(patientApiRequest());
+  // console.log('After first dispatch');
   axios.post(`${url}/registrations`, patientData)
-    .then(response => {
-      const patientRes = response.data;
+    .then((response) => {
+      // console.log('After API Call');
+      const patientRes = response.data.status;
+      console.log('After API Call');
+      console.log(patientData);
+      // console.log('After API Call');
+      console.log(patientRes);
       dispatch(patientApiSuccess(patientRes));
-      // console.log(patientApiFailure);
+      // console.log('account created');
     })
-    .catch(error => {
+    .catch((error) => {
       const errorMsg = error.message;
       dispatch(patientApiFailure(errorMsg));
     });

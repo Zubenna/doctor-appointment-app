@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { displayDoctors, filterDoctors } from '../actions/doctorAction';
 import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
-import url from '../apiUrl/apiLink';
+import { url } from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
 import Slider from '../components/Slider';
 
