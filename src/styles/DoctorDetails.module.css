@@ -72,5 +72,16 @@
   border-radius: 8px;
   position: relative;
   top: 6rem;
+  text-align: center;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.btnMargin {
+  margin-top: 3rem;
 }
   

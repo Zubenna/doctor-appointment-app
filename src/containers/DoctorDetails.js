@@ -29,7 +29,7 @@ const DoctorDetails = () => {
       fetchDoctorDetail();
     }
   }, [doctorId]);
-  console.log(doctor);
+  // console.log(doctor);
 
   return (
     <section className={Style.detailBox}>
@@ -64,9 +64,14 @@ const DoctorDetails = () => {
               <span>Years of experience:</span>
               <p className={Style.noMargin}>{doctor.years_of_experience}</p>
             </div>
-            <Link to={' '} className={Style.bookApmnt}>
-              Book Appointment
-            </Link>
+            <div className={Style.back}>
+              <Link to={' '} className={Style.bookApmnt}>
+                Book Appointment
+              </Link>
+              <Link to="/doctor" className={`${Style.bookApmnt} ${Style.btnMargin}`}>
+                Back To Doctor Listing
+              </Link>
+            </div>
           </div>
         </div>
       </div>
