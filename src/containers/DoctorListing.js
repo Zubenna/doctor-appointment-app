@@ -11,6 +11,11 @@ import Slider from '../components/Slider';
 const DoctorListing = () => {
   const doctors = useSelector((state) => state.allDoctors.doctors);
   const filter = useSelector((state) => state.filter);
+  const user = useSelector((state) => state.user.user);
+  const userValue = user.username;
+  localStorage.setItem('cUser', userValue);
+  const storedValue = localStorage.getItem('cUser');
+
   const dispatch = useDispatch();
   const fetchList = () => {
     axios.get(`${url}/doctors`)
@@ -21,7 +26,7 @@ const DoctorListing = () => {
       })
       .catch((error) => {
         const errorMsg = error.message;
-        console.log('Error', errorMsg);
+        // console.log('Error', errorMsg);
       });
   };
 
@@ -42,6 +47,12 @@ const DoctorListing = () => {
     <div className={Style.container}>
       <DoctorFilter handleFilter={handleFilter} />
       <div>
+        <div>
+          <h3>
+            Logged in as:
+            {`  ${storedValue}`}
+          </h3>
+        </div>
         <div className={Style.textCenter}>
           <h1 className={Style.noMargin}>Choose Experienced Doctor</h1>
           <p className={Style.greyText}>Consultants with many years of experience</p>

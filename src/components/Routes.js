@@ -5,6 +5,7 @@ import DoctorListing from '../containers/DoctorListing';
 import Signup from '../containers/Signup';
 import Login from '../containers/Login';
 import Home from './Home';
+import Logout from '../containers/Logout';
 
 const Routes = () => (
   <Router>
@@ -14,6 +15,7 @@ const Routes = () => (
       <Route path="/login" component={Login} />
       <Route path="/doctor/:doctorId" component={DoctorDetails} />
       <Route path="/doctor" component={DoctorListing} />
+      <Route path="/" component={Logout} />
     </Switch>
   </Router>
 );

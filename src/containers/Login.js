@@ -50,7 +50,6 @@ const Login = (props) => {
       <form>
         <input type="text" name="username" id="uname" value={username} onChange={handleChange} placeholder="Enter username" required />
         <input type="password" name="password" id="pword" value={password} onChange={handleChange} placeholder="Enter password" required />
-
         <button type="submit" onClick={handleSubmit}>Login</button>
         <div>
           <span>Have not registered? </span>

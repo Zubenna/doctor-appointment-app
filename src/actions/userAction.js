@@ -1,9 +1,10 @@
 // import axios from 'axios'; CREATE_ACCOUNT_ERROR
-// import { url } from '../apiUrl/apiLink'; LOGIN_ERROR USER_ERROR
+// import { url } from '../apiUrl/apiLink'; LOGIN_ERROR USER_ERROR LOGGED_OUT
 export const LOGGED_IN = 'LOGGED_IN';
 export const CREATE_ACCOUNT_ERROR = 'CREATE_ACCOUNT_ERROR';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const USER_ERROR = 'USER_ERROR';
+export const LOGGED_OUT = 'LOGGED_OUT';
 
 export const userAccSuccess = (data) => ({
   type: LOGGED_IN,
@@ -22,6 +23,11 @@ export const userLoginError = () => ({
 export const userError = (error) => ({
   type: USER_ERROR,
   payload: error,
+});
+
+export const userLogout = (response) => ({
+  type: LOGGED_OUT,
+  response,
 });
 
 // export const CHECK_STATUS = () => (dispatch) => {
