@@ -5,7 +5,7 @@ import DoctorListing from '../containers/DoctorListing';
 import Signup from '../containers/Signup';
 import Login from '../containers/Login';
 import Home from './Home';
-import Logout from '../containers/Logout';
+import CreateAppointment from '../containers/CreateAppointment';
 
 const Routes = () => (
   <Router>
@@ -13,9 +13,9 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
+      <Route path="/appointment" component={CreateAppointment} />
       <Route path="/doctor/:doctorId" component={DoctorDetails} />
       <Route path="/doctor" component={DoctorListing} />
-      <Route path="/" component={Logout} />
     </Switch>
   </Router>
 );

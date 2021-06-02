@@ -7,6 +7,7 @@ import DoctorFilter from '../components/DoctorFilter';
 import { url } from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
 import Slider from '../components/Slider';
+// import CreateAppointment from './CreateAppointment';
 
 const DoctorListing = () => {
   const doctors = useSelector((state) => state.allDoctors.doctors);
@@ -26,7 +27,7 @@ const DoctorListing = () => {
       })
       .catch((error) => {
         const errorMsg = error.message;
-        // console.log('Error', errorMsg);
+        console.log(errorMsg);
       });
   };
 

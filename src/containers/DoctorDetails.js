@@ -11,7 +11,6 @@ const DoctorDetails = () => {
   const doctor = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
   const { doctorId } = useParams();
-
   const fetchDoctorDetail = () => {
     axios.get(`${url}/doctors/${doctorId}`)
       .then((response) => {
@@ -29,7 +28,6 @@ const DoctorDetails = () => {
       fetchDoctorDetail();
     }
   }, [doctorId]);
-  // console.log(doctor);
 
   return (
     <section className={Style.detailBox}>
@@ -65,7 +63,7 @@ const DoctorDetails = () => {
               <p className={Style.noMargin}>{doctor.years_of_experience}</p>
             </div>
             <div className={Style.back}>
-              <Link to={' '} className={Style.bookApmnt}>
+              <Link to="/appointment" className={Style.bookApmnt}>
                 Book Appointment
               </Link>
               <Link to="/doctor" className={`${Style.bookApmnt} ${Style.btnMargin}`}>
