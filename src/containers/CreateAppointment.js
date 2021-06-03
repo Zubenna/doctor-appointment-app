@@ -9,6 +9,7 @@ import { bookAppointment } from '../actions/appointmentAction';
 
 const CreateAppointment = () => {
   const LOCATIONS = [
+    'Select location',
     'Lagos',
     'Abuja',
     'Port Harcourt',
@@ -20,7 +21,6 @@ const CreateAppointment = () => {
   const user = useSelector((state) => state.user.user);
   const doctor = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
-  console.log(user);
   const user_id = user.id;
   const doctor_id = doctor.id;
   const [date, setDate] = useState(new Date());
@@ -29,15 +29,16 @@ const CreateAppointment = () => {
   const doctor_name = doctor.full_name;
 
   const handleChange = (date) => setDate(date);
+
   const handleClick = (event) => {
     const { value } = event.target;
+    console.log('In handle click', value);
     setLocation(value);
   };
 
   const appointmentData = {
     doctor_id, user_id, appointment_date, location, doctor_name,
   };
-
   const createAppointment = () => {
     axios.post(`${url}/appointments`, appointmentData, { withCredentials: true })
       .then((response) => {

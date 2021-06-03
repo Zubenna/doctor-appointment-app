@@ -6,6 +6,7 @@ import Signup from '../containers/Signup';
 import Login from '../containers/Login';
 import Home from './Home';
 import CreateAppointment from '../containers/CreateAppointment';
+import DisplayAppointments from '../containers/DisplayAppointments';
 
 const Routes = () => (
   <Router>
@@ -14,6 +15,7 @@ const Routes = () => (
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <Route path="/appointment" component={CreateAppointment} />
+      <Route path="/appointmentDisplay" component={DisplayAppointments} />
       <Route path="/doctor/:doctorId" component={DoctorDetails} />
       <Route path="/doctor" component={DoctorListing} />
     </Switch>
