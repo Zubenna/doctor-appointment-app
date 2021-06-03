@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectedDoctor } from '../actions/doctorAction';
 import DoctorFilter from '../components/DoctorFilter';
 import Style from '../styles/DoctorDetails.module.css';
-import { url } from '../apiUrl/apiLink';
+import url from '../apiUrl/apiLink';
 
 const DoctorDetails = () => {
   const doctor = useSelector((state) => state.doctor);

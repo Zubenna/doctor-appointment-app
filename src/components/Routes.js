@@ -6,7 +6,7 @@ import Signup from '../containers/Signup';
 import Login from '../containers/Login';
 import Home from './Home';
 import CreateAppointment from '../containers/CreateAppointment';
-import DisplayAppointments from '../containers/DisplayAppointments';
+import DisplayAppointments from './DisplayAppointments';
 
 const Routes = () => (
   <Router>

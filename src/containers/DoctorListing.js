@@ -6,25 +6,25 @@ import { displayDoctors, filterDoctors } from '../actions/doctorAction';
 import { userLogout, userError } from '../actions/userAction';
 import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
-import { url } from '../apiUrl/apiLink';
+import url from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
 import Slider from '../components/Slider';
 // import logout from './Logout';
 // import DisplayAppointments from './DisplayAppointments';
 import { loadAppointments } from '../actions/appointmentAction';
-// import CreateAppointment from './CreateAppointment';
+// import CreateAppointment from '../containers/CreateAppointment';
 
 const DoctorListing = (props) => {
-  // localStorage.clear();
+  // localStorage;
   const doctors = useSelector((state) => state.allDoctors.doctors);
   const filter = useSelector((state) => state.filter);
   const user = useSelector((state) => state.user.user);
   console.log('User after initial loading', user);
   // const localStorage = '';
-  // user = JSON.stringify(user);
+  // const value = JSON.stringify(user);
   // const userValue = user.username;
   // const value = localStorage.setItem('user');
-  if (localStorage.getItem('id') === null) {
+  if (user !== null) {
     localStorage.setItem('user', JSON.stringify(user));
   }
   // const storedValue = localStorage.getItem('user');
@@ -42,6 +42,7 @@ const DoctorListing = (props) => {
         console.log(errorMsg);
       });
   };
+
   const fetchList = () => {
     axios.get(`${url}/doctors`)
       .then((response) => {
@@ -57,12 +58,11 @@ const DoctorListing = (props) => {
 
   useEffect(() => {
     fetchList();
-    fetchAppointments();
   }, []);
 
-  // useEffect(() => {
-  //   fetchAppointments();
-  // }, [fetchList]);
+  useEffect(() => {
+    fetchAppointments();
+  }, [fetchList]);
 
   const handleFilter = (filter) => {
     dispatch(filterDoctors(filter));
@@ -82,9 +82,6 @@ const DoctorListing = (props) => {
       .catch((error) => {
         dispatch(userError(error));
       });
-    // logout();
-    // history.push('/');
-    // localStorage.clear();
   };
 
   const filteredDoctors = () => {

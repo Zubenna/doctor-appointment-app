@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   doctor: selectedDoctorReducer,
   filter: filterReducer,
   user: userReducer,
-  appointment: appointmentReducer,
+  appointments: appointmentReducer,
 });
 
 export default rootReducer;

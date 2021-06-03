@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { url } from '../apiUrl/apiLink';
+import url from '../apiUrl/apiLink';
 import { userAccSuccess, userAccError } from '../actions/userAction';
 
 const Signup = (props) => {

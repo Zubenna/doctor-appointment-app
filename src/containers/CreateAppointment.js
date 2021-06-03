@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
-import { url } from '../apiUrl/apiLink';
+import DatePicker from 'react-datepicker';
+import DoctorFilter from '../components/DoctorFilter';
+import 'react-datepicker/dist/react-datepicker.css';
+import url from '../apiUrl/apiLink';
 import { bookAppointment } from '../actions/appointmentAction';
+import Style from '../styles/CreateAppointment.module.css';
 
 const CreateAppointment = () => {
   const LOCATIONS = [
@@ -53,19 +55,22 @@ const CreateAppointment = () => {
     createAppointment();
   };
   return (
-    <div>
-      <form>
-        <input type="text" name="doctor_name" value={doctor_name} required />
-        <DatePicker selected={date} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" onChange={handleChange} />
-        <select name="location" id="select" data-testid="areas" onChange={handleClick}>
-          {LOCATIONS.map((city) => <option value={city} key={city}>{city}</option>)}
-        </select>
-        <button type="submit" onClick={handleSubmit}>Create Appointment</button>
-      </form>
-      <Link to="/doctor" className={' '}>
-        Back To Doctor Listing
-      </Link>
-    </div>
+    <section className={Style.setPage}>
+      <DoctorFilter />
+      <div>
+        <form>
+          <input type="text" name="doctor_name" value={doctor_name} required />
+          <DatePicker selected={date} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" onChange={handleChange} />
+          <select name="location" id="select" data-testid="areas" onChange={handleClick}>
+            {LOCATIONS.map((city) => <option value={city} key={city}>{city}</option>)}
+          </select>
+          <button type="submit" onClick={handleSubmit}>Create Appointment</button>
+        </form>
+        <Link to="/doctor" className={' '}>
+          Back To Doctor Listing
+        </Link>
+      </div>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 // import { patientApiRequest, patientApiSuccess } from '../actions/patientAction';
-import { url } from '../apiUrl/apiLink';
+import url from '../apiUrl/apiLink';
 
 const registration = (patientData) => {
   // dispatch(patientApiRequest());

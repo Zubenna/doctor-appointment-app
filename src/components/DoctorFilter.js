@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import Logout from '../containers/Logout';
 import Style from '../styles/DoctorFilter.module.css';
 
 const DoctorFilter = (props) => {
   const { handleFilter, handleLogout } = props;
+  // const { handleList } = props;
 
   const handleClick = (event) => {
     const value = event.target.innerText;
@@ -22,6 +23,8 @@ const DoctorFilter = (props) => {
         <button type="button" className={Style.buttonText} onClick={handleClick}>Paediatrician</button>
         <button type="button" className={Style.buttonText} onClick={handleClick}>Surgeon</button>
         <button type="button" className={Style.buttonText} onClick={handleClick}>Cardiologist</button>
+        {/* <button type="button" onClick={handleList}>Appointments</button> */}
+        <Link to="/appointmentDisplay">Appointments</Link>
         <button type="button" onClick={handleLogout}>Log Out</button>
       </div>
     </div>
@@ -31,6 +34,7 @@ const DoctorFilter = (props) => {
 DoctorFilter.propTypes = {
   handleFilter: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
+  // handleList: PropTypes.func.isRequired,
 };
 
 export default DoctorFilter;
