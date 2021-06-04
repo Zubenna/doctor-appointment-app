@@ -24,9 +24,6 @@ const DoctorListing = (props) => {
   // const value = JSON.stringify(user);
   // const userValue = user.username;
   // const value = localStorage.setItem('user');
-  if (user !== null) {
-    localStorage.setItem('user', JSON.stringify(user));
-  }
   // const storedValue = localStorage.getItem('user');
   console.log('user from local storage', user);
   const dispatch = useDispatch();
@@ -73,11 +70,12 @@ const DoctorListing = (props) => {
     axios.delete(`${url}/logout`, { withCredentials: true })
       .then((response) => {
         if (response.data.logged_out) {
-          history.push('/');
+          dispatch(userLogout(response));
+          localStorage.setItem('user', JSON.stringify({ username: 'Guest' }));
           console.log(response.data.logged_out);
           console.log('logout processed');
+          history.push('/');
         }
-        dispatch(userLogout(response));
       })
       .catch((error) => {
         dispatch(userError(error));

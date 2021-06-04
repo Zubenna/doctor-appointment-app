@@ -28,8 +28,9 @@ const Login = (props) => {
       .then((response) => {
         console.log('In Login action');
         if (response.data.logged_in) {
+          localStorage.setItem('user', JSON.stringify(response.data.data));
           history.push('/doctor');
-          dispatch(userAccSuccess(response));
+          dispatch(userAccSuccess(response.data.data));
         } else {
           dispatch(userLoginError());
         }

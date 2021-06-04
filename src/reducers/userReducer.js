@@ -7,8 +7,8 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOGGED_IN': return { ...state, status: 'CONNECTED', user: action.payload.data.data };
-    case 'LOGGED_OUT': return { ...state, status: 'NOT_CONNECTED', user: {} };
+    case 'LOGGED_IN': return { ...state, status: 'CONNECTED', user: action.payload };
+    case 'LOGGED_OUT': return { ...state, status: 'NOT_CONNECTED', user: { username: 'Guest' } };
     case 'LOGIN_ERROR': return { ...state, errorMessage: 'Username or password incorrect' };
     case 'CREATE_ACCOUNT_ERROR': return { ...state, errorMessage: 'Please check your information' };
     // case 'RESET_ERROR': return { ...state, errorMessage: '' };
