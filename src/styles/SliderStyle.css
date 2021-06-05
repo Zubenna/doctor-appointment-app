@@ -7,24 +7,29 @@
   --clr-grey-5: hsl(210, 22%, 49%);
  }
 
-.section-center {
-  margin: 0 auto;
-  margin-top: 2rem;
-  width: 100vw;
-  height: 280px;
-  /* max-width: 63rem; */
-  max-width: 78vw;
+ .Appx {
+  font-family: sans-serif;
+  max-width: 45rem;
+  margin: 0 auto 10rem auto;
+  margin-left: 6.5rem;
+}
+
+.Appx > div {
   text-align: center;
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  }
- 
-  article h4 {
-    text-transform: uppercase;
-    color: var(--clr-primary-5);
-    margin-bottom: 0.25rem;
-  }
+  height: 10rem;
+}
+
+.imgSize {
+  width: 80%;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
   .name {
     text-transform: capitalize;
@@ -35,15 +40,27 @@
   .text {
     color:hsl(210, 22%, 49%);
   }
- 
+
+  .prev {
+    left: 16.4rem;
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+  }
+
+  .next {
+    right: 0.5rem;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+  }
+
   .prev,
   .next {
     position: absolute;
-    top: 100px;
+    top: 320px;
     transform: translateY(-50%);
     background: #97BF0F;
     color: #fff;
-    width: 6rem;
+    width: 3.6rem;
     height: 3rem;
     display: grid;
     place-items: center;
@@ -53,52 +70,44 @@
     transition: var(--transition);
   }
 
-  .prev:hover,
-  .next:hover {
-    background: gray;
+  .position {
+    margin: 0 auto;
   }
 
-  .prev {
-    left: 0;
-    border-top-right-radius: 40%;
-    border-bottom-right-radius: 40%;
+  .centerName {
+    margin-top: 1rem;
   }
 
-  .next {
-    right: 0;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
+  .noMargin {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
   }
 
-  @media (min-width: 800px) {
-    .prev,
-    .next {
-      width: 4rem;
-      height: 3rem;
-      font-size: 1.5rem;
-    }
+  .text {
+    color:hsl(210, 22%, 49%);
   }
 
-  article {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: var(--transition);
+  .socialColor {
+    color: rgb(214, 219, 219);
   }
 
-  article.activeSlide {
-    opacity: 1;
-    transform: translateX(0);
+  .setLine {
+    text-align: center;
+    margin: 0.6rem 0;
+    color: gray;
   }
 
-  article.lastSlide {
-    transform: translateX(-100%);
+  .alignLocation {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
   }
 
-  article.nextSlide {
-    transform: translateX(100%);
+  .socialHandle {
+    display: flex;
+    width: 50%;
+    margin: 0.5rem auto 1rem auto;
+    justify-content: space-between;
+    font-size: 1.2rem;
   }
-  
+ 

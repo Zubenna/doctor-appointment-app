@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 // import HomeStyles from '../styles/HomeStyles.module.css';
 
-const Home = ({ history }) => {
+const Home = (props) => {
   const user = useSelector((state) => state.user.user);
-
+  const { history } = props;
   if (user.username !== 'Guest') {
     history.push('/doctor');
   }
-
   return (
     <div>
       <h1>BOOK APPOINTMENT WITH A DOCTOR</h1>
@@ -25,7 +24,6 @@ const Home = ({ history }) => {
     </div>
   );
 };
-
 Home.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
 };

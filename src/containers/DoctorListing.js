@@ -8,24 +8,19 @@ import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
 import url from '../apiUrl/apiLink';
 import Style from '../styles/DoctorListing.module.css';
-import Slider from '../components/Slider';
+import SliderShow from '../components/SliderShow';
 // import logout from './Logout';
 // import DisplayAppointments from './DisplayAppointments';
 import { loadAppointments } from '../actions/appointmentAction';
 // import CreateAppointment from '../containers/CreateAppointment';
 
 const DoctorListing = (props) => {
-  // localStorage;
   const doctors = useSelector((state) => state.allDoctors.doctors);
   const filter = useSelector((state) => state.filter);
   const user = useSelector((state) => state.user.user);
-  console.log('User after initial loading', user);
-  // const localStorage = '';
-  // const value = JSON.stringify(user);
-  // const userValue = user.username;
-  // const value = localStorage.setItem('user');
-  // const storedValue = localStorage.getItem('user');
-  console.log('user from local storage', user);
+  // console.log('User after initial loading', user);
+
+  // console.log('user from local storage', user);
   const dispatch = useDispatch();
   const fetchAppointments = () => {
     axios.get(`${url}/appointments/${user.id}`)
@@ -74,6 +69,7 @@ const DoctorListing = (props) => {
           localStorage.setItem('user', JSON.stringify({ username: 'Guest' }));
           console.log(response.data.logged_out);
           console.log('logout processed');
+          // localStorage.clear();
           history.push('/');
         }
       })
@@ -103,7 +99,7 @@ const DoctorListing = (props) => {
             <h1 className={Style.noMargin}>Choose Experienced Doctor</h1>
             <p className={Style.greyText}>Consultants with many years of experience</p>
           </div>
-          <Slider doctors={doctors} />
+          <SliderShow doctors={doctors} />
           <div className={Style.displayDoctors}>
             {filteredDoctors().map((doctor) => (
               <DoctorComponent key={doctor.id} doctor={doctor} />
