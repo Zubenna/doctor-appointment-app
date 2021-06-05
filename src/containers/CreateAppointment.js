@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
-import DoctorFilter from '../components/DoctorFilter';
+import SideNav from '../components/SideNav';
 import 'react-datepicker/dist/react-datepicker.css';
 import url from '../apiUrl/apiLink';
 import { bookAppointment } from '../actions/appointmentAction';
@@ -56,7 +56,7 @@ const CreateAppointment = () => {
   };
   return (
     <section className={Style.setPage}>
-      <DoctorFilter />
+      <SideNav />
       <div>
         <form>
           <input type="text" name="doctor_name" value={doctor_name} required />
@@ -66,9 +66,9 @@ const CreateAppointment = () => {
           </select>
           <button type="submit" onClick={handleSubmit}>Create Appointment</button>
         </form>
-        <Link to="/doctor" className={' '}>
+        {/* <Link to="/doctor" className={' '}>
           Back To Doctor Listing
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

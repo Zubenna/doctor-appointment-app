@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectedDoctor } from '../actions/doctorAction';
-import DoctorFilter from '../components/DoctorFilter';
+import SideNav from '../components/SideNav';
 import Style from '../styles/DoctorDetails.module.css';
 import url from '../apiUrl/apiLink';
 
@@ -31,7 +31,7 @@ const DoctorDetails = () => {
 
   return (
     <section className={Style.detailBox}>
-      <DoctorFilter />
+      <SideNav />
       <div className={Style.detailBox}>
         <div className={Style.picBox}>
           <img src={doctor.picture} alt={doctor.full_name} className={Style.img} />
@@ -66,9 +66,9 @@ const DoctorDetails = () => {
               <Link to="/appointment" className={Style.bookApmnt}>
                 Book Appointment
               </Link>
-              <Link to="/doctor" className={`${Style.bookApmnt} ${Style.btnMargin}`}>
+              {/* <Link to="/doctor" className={`${Style.bookApmnt} ${Style.btnMargin}`}>
                 Back To Doctor Listing
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@
   font-family: sans-serif;
   max-width: 45rem;
   margin: 0 auto 10rem auto;
-  margin-left: 6.5rem;
+  /* margin-left: 8.5rem; */
 }
 
 .Appx > div {
@@ -42,7 +42,8 @@
   }
 
   .prev {
-    left: 16.4rem;
+    /* left: 16.4rem; */
+    left: 20.5%;
     border-top-right-radius: 40%;
     border-bottom-right-radius: 40%;
   }

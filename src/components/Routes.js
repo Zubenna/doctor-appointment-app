@@ -4,14 +4,14 @@ import DoctorDetails from '../containers/DoctorDetails';
 import DoctorListing from '../containers/DoctorListing';
 import Signup from '../containers/Signup';
 import Login from '../containers/Login';
-import Home from './Home';
+import Cover from './Cover';
 import CreateAppointment from '../containers/CreateAppointment';
 import DisplayAppointments from './DisplayAppointments';
 
 const Routes = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Cover} />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <Route path="/appointment" component={CreateAppointment} />

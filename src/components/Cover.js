@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 // import HomeStyles from '../styles/HomeStyles.module.css';
 
-const Home = (props) => {
+const Cover = (props) => {
   const user = useSelector((state) => state.user.user);
   const { history } = props;
   if (user.username !== 'Guest') {
@@ -24,8 +24,8 @@ const Home = (props) => {
     </div>
   );
 };
-Home.propTypes = {
+Cover.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default Home;
+export default Cover;
