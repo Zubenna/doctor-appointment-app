@@ -46,6 +46,7 @@ const SliderShow = (props) => {
         slidesToScroll={3}
         autoplay
         autoplaySpeed={3000}
+        arrows={false}
       >
         {renderSlides()}
       </Slider>

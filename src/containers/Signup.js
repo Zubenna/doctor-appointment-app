@@ -38,7 +38,7 @@ const Signup = (props) => {
 
   const handleRegister = () => {
     const { history } = props;
-    history.push('/doctor');
+    history.push('/login');
   };
 
   const userData = {

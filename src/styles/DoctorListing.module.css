@@ -1,18 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
-
 .displayDoctors {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 5rem;
 }
 
 .container {
-  /* border: 2px solid gray; */
   display: flex;
-  /* height: 100%; */
+  padding: 0.4rem;
 }
 
 .textCenter {
@@ -21,7 +17,6 @@
   margin-bottom: 2rem;
   margin-left: 3rem;
   font-family: 'Exo 2', sans-serif;
-  /* font-family: 'lato' sans-serif; */
 }
 
 .noMargin {
@@ -29,7 +24,32 @@
 }
 
 .greyText {
-  color:hsl(210, 22%, 49%);;
+  color:rgb(97, 125, 152);
   font-size: 1.2rem;
   margin: 0;
+}
+
+.setUsername {
+  text-align: right;
+  padding-right: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .textCenter {
+    margin-left: 0;
+  }
+
+  .displayDoctors {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .textCenter {
+    font-size: small;
+  }
+
+  .displayDoctors {
+    margin: 0 auto;
+  }
 }

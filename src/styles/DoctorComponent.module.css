@@ -58,3 +58,10 @@
 .socialColor {
   color: rgb(214, 219, 219);
 }
+
+@media (max-width: 576px) {
+  .docImageBox {
+    width: 10rem;
+    height: 9rem;
+  }
+}

@@ -84,4 +84,13 @@
 .btnMargin {
   margin-top: 3rem;
 }
-  
+
+
+@media (max-width: 576px) {
+  .picBox {
+    /* width: 30%;
+    height: 30%; */
+    /* margin-top: 8rem;
+    margin-left: 5rem; */
+  }
+}

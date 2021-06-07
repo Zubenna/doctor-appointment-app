@@ -10,8 +10,8 @@
  .Appx {
   font-family: sans-serif;
   max-width: 45rem;
-  margin: 0 auto 10rem auto;
-  /* margin-left: 8.5rem; */
+  margin: 0 auto 10rem 8.5rem;
+  margin-left: 8.5rem;
 }
 
 .Appx > div {
@@ -31,84 +31,105 @@
   object-fit: cover;
 }
 
-  .name {
-    text-transform: capitalize;
-    margin: 0;
-    font-family: 'Exo 2', sans-serif;
-  }
+.name {
+  text-transform: capitalize;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
 
-  .text {
-    color:hsl(210, 22%, 49%);
-  }
+.text {
+  color:hsl(210, 22%, 49%);
+}
 
-  .prev {
-    /* left: 16.4rem; */
-    left: 20.5%;
-    border-top-right-radius: 40%;
-    border-bottom-right-radius: 40%;
-  }
+.prev {
+  left: 20.5%;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
 
-  .next {
-    right: 0.5rem;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
+.next {
+  right: 0.5rem;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 320px;
+  transform: translateY(-50%);
+  background: #97BF0F;
+  color: #fff;
+  width: 3.6rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.position {
+  margin: 0 auto;
+}
+
+.centerName {
+  margin-top: 1rem;
+}
+
+.noMargin {
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.text {
+  color:hsl(210, 22%, 49%);
+}
+
+.socialColor {
+  color: rgb(214, 219, 219);
+}
+
+.setLine {
+  text-align: center;
+  margin: 0.6rem 0;
+  color: gray;
+}
+
+.alignLocation {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.socialHandle {
+  display: flex;
+  width: 50%;
+  margin: 0.5rem auto 1rem auto;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .Appx {
+    width: 34rem;
+    margin-left: 1.8rem;
   }
 
   .prev,
   .next {
-    position: absolute;
-    top: 320px;
-    transform: translateY(-50%);
-    background: #97BF0F;
-    color: #fff;
-    width: 3.6rem;
-    height: 3rem;
-    display: grid;
-    place-items: center;
-    border-color: transparent;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: var(--transition);
+    width: 2.2rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 
-  .position {
-    margin: 0 auto;
-  }
+}
 
-  .centerName {
-    margin-top: 1rem;
+@media (max-width: 576px) {
+  .Appx {
+    display: none;
   }
+}
 
-  .noMargin {
-    margin: 0;
-    font-family: 'Exo 2', sans-serif;
-  }
-
-  .text {
-    color:hsl(210, 22%, 49%);
-  }
-
-  .socialColor {
-    color: rgb(214, 219, 219);
-  }
-
-  .setLine {
-    text-align: center;
-    margin: 0.6rem 0;
-    color: gray;
-  }
-
-  .alignLocation {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .socialHandle {
-    display: flex;
-    width: 50%;
-    margin: 0.5rem auto 1rem auto;
-    justify-content: space-between;
-    font-size: 1.2rem;
-  }
  
