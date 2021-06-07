@@ -71,6 +71,7 @@
   font-family: 'Exo 2', sans-serif;
   border-radius: 8px;
   position: relative;
+  font-weight: bold;
   top: 6rem;
   text-align: center;
 }
@@ -78,7 +79,6 @@
 .back {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .btnMargin {
@@ -86,11 +86,55 @@
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .picBox {
-    /* width: 30%;
-    height: 30%; */
-    /* margin-top: 8rem;
-    margin-left: 5rem; */
+    width: 30%;
+    height: 12rem;
+    margin-left: 1rem;
+  }
+
+  .nameDetail {
+  left: 24rem;
+  }
+
+  .noMargin {
+    font-size: 0.8rem;
+  }
+
+  .smallFont {
+    font-size: 0.8rem;
+  }
+
+  .setRow {
+    font-size: small;
+  }
+
+  .bookApmnt {
+    font-size: 0.9rem;
+  }
+  
+}
+
+@media (max-width: 576px) {
+  .flexCol {
+    flex-direction: column;
+  }
+
+  .nameDetail {
+    top: 22rem;
+    left: 5rem;
+    width: 80%;
+  }
+
+  .picBox {
+    width: 80%;
+  }
+
+  .bookApmnt {
+    top: 2rem;
+  }
+
+  .setSocial {
+    font-size: 0.4rem;
   }
 }

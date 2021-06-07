@@ -32,7 +32,7 @@ const DoctorDetails = () => {
   return (
     <section className={Style.detailBox}>
       <SideNav />
-      <div className={Style.detailBox}>
+      <div className={`${Style.detailBox} ${Style.flexCol}`}>
         <div className={Style.picBox}>
           <img src={doctor.picture} alt={doctor.full_name} className={Style.img} />
         </div>
@@ -66,9 +66,6 @@ const DoctorDetails = () => {
               <Link to="/appointment" className={Style.bookApmnt}>
                 Book Appointment
               </Link>
-              {/* <Link to="/doctor" className={`${Style.bookApmnt} ${Style.btnMargin}`}>
-                Back To Doctor Listing
-              </Link> */}
             </div>
           </div>
         </div>
