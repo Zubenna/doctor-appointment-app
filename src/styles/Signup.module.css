@@ -9,7 +9,8 @@
 .signupForm {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 20%;
+  max-width: 30%;
   margin: 8rem auto 0 auto;
 }
 
@@ -37,10 +38,67 @@
 }
 
 .signupForm span,
-.submitBtn {
+.submitBtn,
+.setLinkBtn,
+.setTitle {
   font-family: 'Exo 2', sans-serif; 
 }
 
 .submitBtn {
   text-decoration: none;
+}
+
+.homeForm {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: 4rem auto 0 auto;
+}
+
+.setLinkBtn {
+  height: 2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.2rem;
+  background: #97BF0F;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  width: 8rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.setTitle {
+  text-align: center;
+  margin-top: 12rem;
+  color: #cccccc;
+}
+
+.coverBg {
+  background:linear-gradient(to bottom right, rgba(10, 19, 0, 0.746), rgba(11, 53, 3, 0.719)), url("../images/cover-image.jpg");
+  background-color: #cccccc; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .signupForm {
+      width: 60%;
+    }
+    
+    .homeForm {
+      width: 60%;
+    }
+}
+
+@media (max-width: 576px) {
+    .signupForm {
+      width: 80%;
+    }
+    
+    .homeForm {
+      width: 80%;
+    }
 }

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import url from '../apiUrl/apiLink';
 import { userAccSuccess, userLoginError, userError } from '../actions/userAction';
+import Style from '../styles/Signup.module.css';
 
 const Login = (props) => {
   /* eslint-disable camelcase */
@@ -47,14 +48,14 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container">
-      <form>
+    <div className={Style.container}>
+      <form className={Style.signupForm}>
         <input type="text" name="username" id="uname" value={username} onChange={handleChange} placeholder="Enter username" required />
         <input type="password" name="password" id="pword" value={password} onChange={handleChange} placeholder="Enter password" required />
         <button type="submit" onClick={handleSubmit}>Login</button>
         <div>
           <span>Have not registered? </span>
-          <Link to="/">Home</Link>
+          <Link to="/" className={Style.submitBtn}>Home</Link>
         </div>
       </form>
     </div>
