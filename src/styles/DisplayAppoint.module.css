@@ -2,19 +2,19 @@
 
 .setPage {
   display: flex;
-  /* min-width: 80%; */
 }
 
 .listBox {
   background: #97BF0F;
   text-align: center;
   width: 100%;
+  padding-top: 3.5rem;
 }
 
 .rowHead {
   display: flex;
   width: 80%;
-  margin: 2rem auto;
+  margin: 2rem auto 0.2rem auto;
   justify-content: space-between;
   font-size: 1.4rem;
 }
@@ -27,7 +27,7 @@
   height: 2rem;
   padding: 0.5rem;
   font-size: 1.2rem;
-  color: #fff;
+  color: rgb(34, 33, 33);
   text-align: center;
   width: 20%;
 }
@@ -41,4 +41,61 @@
   width: 80%;
   justify-content: space-between;
   margin: 0 auto;
+  padding: 0;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .rowHead {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .smallFont {
+    font-size: 1.1rem;
+  }
+
+  .itemBox {
+    width: 100%
+  }
+
+  .dataDate {
+    width: 30%;
+    text-align: right;
+  }
+
+  .listBox  {
+    padding: 0.6rem;
+  }
+
+  .alignCol {
+    width: 30%;
+  }
+
+  .docName {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .data {
+    font-size: smaller;
+  }
+
+  .docName {
+    width: 30%;
+  }
+
+  .alignCol {
+    width: 30%;
+  }
+
+  .dataDate {
+    width: 20%;
+    text-align: right;
+  }
 }

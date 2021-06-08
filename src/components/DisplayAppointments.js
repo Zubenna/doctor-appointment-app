@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-// import PropTypes from 'prop-types';
 import url from '../apiUrl/apiLink';
 import { loadAppointments } from '../actions/appointmentAction';
-// import { Link } from 'react-router-dom';
 import BookNav from './BookNav';
 import Style from '../styles/DisplayAppoint.module.css';
 
@@ -29,12 +27,6 @@ const DisplayAppointments = () => {
 
   useEffect(() => {
     fetchAppointments();
-    // const appointments = useSelector((state) => state.appointments.appointments);
-  }, []);
-
-  useEffect(() => {
-    fetchAppointments();
-    // const appointments = useSelector((state) => state.appointments.appointments);
   }, []);
 
   console.log('In appointment display comp', appointments);
@@ -44,7 +36,7 @@ const DisplayAppointments = () => {
       <BookNav />
       <div className={Style.listBox}>
         <div>
-          <h2>Inside Display Appointment</h2>
+          <h2 className={`${Style.font} ${Style.smallFont}`}>Inside Display Appointment</h2>
           <div className={`${Style.rowHead} ${Style.font}`}>
             <div>Doctor Name</div>
             <div>Appointment Date</div>
@@ -53,27 +45,19 @@ const DisplayAppointments = () => {
           </div>
           { appointments.map((data) => (
             <div key={data.id} className={Style.itemBox}>
-              <div className={Style.data}>{data.doctor_name}</div>
+              <div className={`${Style.data} ${Style.docName}`}>{data.doctor_name}</div>
               <div className={`${Style.data} ${Style.dataDate}`}>
                 {new Date(data.appointment_date)
                   .toLocaleDateString()}
               </div>
-              <div className={Style.data}>{data.location}</div>
-              <div className={Style.data}>{data.doctor_id}</div>
+              <div className={`${Style.data} ${Style.alignRight} ${Style.alignCol}`}>{data.location}</div>
+              <div className={`${Style.data} ${Style.alignRight}`}>{data.doctor_id}</div>
             </div>
           ))}
         </div>
-        {/* <Link to="/doctor" className={' '}>
-          Back To Doctor Listing
-        </Link> */}
       </div>
     </section>
   );
-};
-
-DisplayAppointments.propTypes = {
-  // userId: PropTypes.number.isRequired,
-  // handleLogout: PropTypes.func.isRequired,
 };
 
 export default DisplayAppointments;
