@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
@@ -57,42 +56,18 @@ const CreateAppointment = () => {
   return (
     <section className={Style.setPage}>
       <SideNav />
-      <div>
-        <form>
+      <div className={Style.formContainer}>
+        <form className={Style.formBox}>
           <input type="text" name="doctor_name" value={doctor_name} required />
-          <DatePicker selected={date} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" onChange={handleChange} />
+          <DatePicker data-testid="date" selected={date} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" onChange={handleChange} />
           <select name="location" id="select" data-testid="areas" onChange={handleClick}>
             {LOCATIONS.map((city) => <option value={city} key={city}>{city}</option>)}
           </select>
-          <button type="submit" onClick={handleSubmit}>Create Appointment</button>
+          <button type="submit" className={Style.createBtn} onClick={handleSubmit}>Create Appointment</button>
         </form>
-        {/* <Link to="/doctor" className={' '}>
-          Back To Doctor Listing
-        </Link> */}
       </div>
     </section>
   );
 };
-
-// CreateAppointment = {
-//   history: PropTypes.instanceOf(Object).isRequired,
-// };
-
-// CreateAppointment.propTypes = {
-//   user: PropTypes.shape({
-//     full_name: PropTypes.string,
-//     user_id: PropTypes.number,
-//   }).isRequired,
-// };
-
-// CreateAppointment.propTypes = {
-//   full_name: PropTypes.string.isRequired,
-//   id: PropTypes.number.isRequired,
-//   email: PropTypes.string.isRequired,
-// };
-
-// CreateAppointment.propTypes = {
-//   docId: PropTypes.string.isRequired,
-// };
 
 export default CreateAppointment;
