@@ -19,7 +19,6 @@ const DoctorListing = (props) => {
     axios.get(`${url}/doctors`)
       .then((response) => {
         const docList = response.data.data;
-        console.log('from api', docList);
         dispatch(displayDoctors(docList));
       })
       .catch((error) => {

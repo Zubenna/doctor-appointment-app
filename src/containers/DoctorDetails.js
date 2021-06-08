@@ -15,12 +15,11 @@ const DoctorDetails = () => {
     axios.get(`${url}/doctors/${doctorId}`)
       .then((response) => {
         const docDetail = response.data.data;
-        console.log('from api', docDetail);
         dispatch(selectedDoctor(docDetail));
       })
       .catch((error) => {
         const errorMsg = error.message;
-        console.log('Error', errorMsg);
+        console.log(errorMsg);
       });
   };
   useEffect(() => {

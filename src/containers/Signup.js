@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import url from '../apiUrl/apiLink';
 import { userAccSuccess, userAccError } from '../actions/userAction';
+import Style from '../styles/Signup.module.css';
 
 const Signup = (props) => {
   /* eslint-disable camelcase */
@@ -48,12 +49,9 @@ const Signup = (props) => {
   const signupProcess = () => {
     axios.post(`${url}/registrations`, userData, { withCredentials: true })
       .then((response) => {
-        console.log(response.data.status);
-        console.log(response.data.errors);
         if (response.data.status === 'created') {
           handleRegister();
           dispatch(userAccSuccess(response));
-          console.log('created');
         }
       })
       .catch((error) => {
@@ -72,8 +70,8 @@ const Signup = (props) => {
   };
 
   return (
-    <div className="container">
-      <form>
+    <div className={Style.container}>
+      <form className={Style.signupForm}>
         <input type="text" name="fullname" id="fname" value={full_name} onChange={handleChange} placeholder="Enter full name" required />
         <input type="text" name="username" id="uname" value={username} onChange={handleChange} placeholder="Enter username" required />
         <input type="text" name="phonenumber" id="pnumber" value={phone_number} onChange={handleChange} placeholder="Enter phone number" required />
@@ -85,7 +83,7 @@ const Signup = (props) => {
         <button type="submit" onClick={handleSubmit}>Register</button>
         <div>
           <span>Already have an account? </span>
-          <Link to="/login">Login</Link>
+          <Link to="/login" className={Style.submitBtn}>Login</Link>
         </div>
         {errorMsg === '' ? '' : <h3>{errorMsg}</h3>}
 

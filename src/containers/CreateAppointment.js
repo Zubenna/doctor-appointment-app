@@ -33,7 +33,6 @@ const CreateAppointment = () => {
 
   const handleClick = (event) => {
     const { value } = event.target;
-    console.log('In handle click', value);
     setLocation(value);
   };
 
@@ -43,8 +42,6 @@ const CreateAppointment = () => {
   const createAppointment = () => {
     axios.post(`${url}/appointments`, appointmentData, { withCredentials: true })
       .then((response) => {
-        console.log(response.data.status);
-        console.log('appointment created');
         dispatch(bookAppointment(response));
       });
   };
