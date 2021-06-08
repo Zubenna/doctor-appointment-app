@@ -14,7 +14,6 @@ const DoctorFilter = (props) => {
   const [show4, setShow4] = useState();
   const [show5, setShow5] = useState();
   const [show6, setShow6] = useState();
-  // const btnIds = ['all', 'gyne', 'neuro', 'paed', 'surgeon', 'cardi'];
 
   const handleClick = (event) => {
     const value = event.target.innerText;

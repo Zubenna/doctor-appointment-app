@@ -9,14 +9,11 @@ import Style from '../styles/DisplayAppoint.module.css';
 const DisplayAppointments = () => {
   const user = useSelector((state) => state.user.user);
   const appointments = useSelector((state) => state.appointments.appointments);
-  console.log('user in appointment display', user);
   const dispatch = useDispatch();
-  console.log(user.id);
   const fetchAppointments = () => {
     axios.get(`${url}/appointments/${user.id}`)
       .then((response) => {
         const appointList = response.data.data;
-        console.log('from appointment api', appointList);
         dispatch(loadAppointments(appointList));
       })
       .catch((error) => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-// import Style from '../styles/Cover.module.css';
 import Style from '../styles/Signup.module.css';
 
 const Cover = (props) => {

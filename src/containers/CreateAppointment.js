@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import SideNav from '../components/SideNav';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -8,7 +9,7 @@ import url from '../apiUrl/apiLink';
 import { bookAppointment } from '../actions/appointmentAction';
 import Style from '../styles/CreateAppointment.module.css';
 
-const CreateAppointment = () => {
+const CreateAppointment = (props) => {
   const LOCATIONS = [
     'Select location',
     'Lagos',
@@ -36,6 +37,11 @@ const CreateAppointment = () => {
     setLocation(value);
   };
 
+  const handleCreation = () => {
+    const { history } = props;
+    history.push('/appointmentDisplay');
+  };
+
   const appointmentData = {
     doctor_id, user_id, appointment_date, location, doctor_name,
   };
@@ -43,6 +49,7 @@ const CreateAppointment = () => {
     axios.post(`${url}/appointments`, appointmentData, { withCredentials: true })
       .then((response) => {
         dispatch(bookAppointment(response));
+        handleCreation();
       });
   };
 
@@ -65,6 +72,10 @@ const CreateAppointment = () => {
       </div>
     </section>
   );
+};
+
+CreateAppointment.propTypes = {
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default CreateAppointment;
