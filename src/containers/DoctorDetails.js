@@ -17,9 +17,7 @@ const DoctorDetails = () => {
         const docDetail = response.data.data;
         dispatch(selectedDoctor(docDetail));
       })
-      .catch((error) => {
-        const errorMsg = error.message;
-        console.log(errorMsg);
+      .catch(() => {
       });
   };
   useEffect(() => {

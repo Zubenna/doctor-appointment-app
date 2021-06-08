@@ -27,7 +27,6 @@ const Login = (props) => {
   const loginProcess = () => {
     axios.post(`${url}/login`, userData)
       .then((response) => {
-        console.log('In Login action');
         if (response.data.logged_in) {
           localStorage.setItem('user', JSON.stringify(response.data.data));
           history.push('/doctor');

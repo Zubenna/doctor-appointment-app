@@ -16,9 +16,7 @@ const DisplayAppointments = () => {
         const appointList = response.data.data;
         dispatch(loadAppointments(appointList));
       })
-      .catch((error) => {
-        const errorMsg = error.message;
-        console.log(errorMsg);
+      .catch(() => {
       });
   };
 
@@ -26,7 +24,6 @@ const DisplayAppointments = () => {
     fetchAppointments();
   }, []);
 
-  console.log('In appointment display comp', appointments);
   return (
     /* eslint-disable camelcase */
     <section className={Style.setPage}>

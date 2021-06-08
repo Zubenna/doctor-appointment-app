@@ -21,9 +21,7 @@ const DoctorListing = (props) => {
         const docList = response.data.data;
         dispatch(displayDoctors(docList));
       })
-      .catch((error) => {
-        const errorMsg = error.message;
-        console.log(errorMsg);
+      .catch(() => {
       });
   };
 
