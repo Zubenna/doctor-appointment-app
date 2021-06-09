@@ -36,7 +36,7 @@ const DoctorListing = (props) => {
   const { history } = props;
 
   const handleLogout = () => {
-    axios.delete(`${url}/logout`, { withCredentials: true })
+    axios.delete(`${url}/logout`)
       .then((response) => {
         if (response.data.logged_out) {
           dispatch(userLogout(response));
