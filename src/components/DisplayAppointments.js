@@ -30,7 +30,7 @@ const DisplayAppointments = () => {
       <BookNav />
       <div className={Style.listBox}>
         <div>
-          <h2 className={`${Style.font} ${Style.smallFont}`}>Inside Display Appointment</h2>
+          <h2 className={`${Style.font} ${Style.smallFont}`}>My Booked Appointment</h2>
           <div className={`${Style.rowHead} ${Style.font}`}>
             <div>Doctor Name</div>
             <div>Appointment Date</div>
