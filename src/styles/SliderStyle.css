@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
 :root {
   --transition: all 0.3s linear;
   --radius: 0.25rem;
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-5: hsl(210, 22%, 49%);
- }
+}
 
- .Appx {
+.Appx {
   font-family: sans-serif;
   max-width: 45rem;
   margin: 0 auto 10rem 8.5rem;
@@ -37,10 +38,6 @@
   font-family: 'Exo 2', sans-serif;
 }
 
-.text {
-  color:hsl(210, 22%, 49%);
-}
-
 .prev {
   left: 20.5%;
   border-top-right-radius: 40%;
@@ -58,7 +55,7 @@
   position: absolute;
   top: 320px;
   transform: translateY(-50%);
-  background: #97BF0F;
+  background: #97bf0f;
   color: #fff;
   width: 3.6rem;
   height: 3rem;
@@ -84,7 +81,7 @@
 }
 
 .text {
-  color:hsl(210, 22%, 49%);
+  color: hsl(210, 22%, 49%);
 }
 
 .socialColor {
@@ -123,7 +120,6 @@
     height: 2rem;
     font-size: 1rem;
   }
-
 }
 
 @media (max-width: 576px) {
@@ -131,5 +127,3 @@
     display: none;
   }
 }
-
- 

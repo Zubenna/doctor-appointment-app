@@ -5,7 +5,7 @@
 }
 
 .listBox {
-  background: #97BF0F;
+  background: #97bf0f;
   text-align: center;
   width: 100%;
   padding-top: 3.5rem;
@@ -59,7 +59,7 @@
   }
 
   .itemBox {
-    width: 100%
+    width: 100%;
   }
 
   .dataDate {
@@ -67,7 +67,7 @@
     text-align: right;
   }
 
-  .listBox  {
+  .listBox {
     padding: 0.6rem;
   }
 

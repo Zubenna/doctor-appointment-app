@@ -63,7 +63,7 @@
 
 .bookApmnt {
   width: 100%;
-  background: #97BF0F;
+  background: #97bf0f;
   padding: 0.4rem;
   color: #fff;
   text-decoration: none;
@@ -85,7 +85,6 @@
   margin-top: 3rem;
 }
 
-
 @media (max-width: 768px) {
   .picBox {
     width: 30%;
@@ -94,7 +93,7 @@
   }
 
   .nameDetail {
-  left: 24rem;
+    left: 24rem;
   }
 
   .noMargin {
@@ -112,7 +111,6 @@
   .bookApmnt {
     font-size: 0.9rem;
   }
-  
 }
 
 @media (max-width: 576px) {

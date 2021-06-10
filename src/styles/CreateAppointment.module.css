@@ -14,7 +14,7 @@
 .formBox {
   display: flex;
   flex-direction: column;
-  border: 3px solid #97BF0F;
+  border: 3px solid #97bf0f;
   width: 50%;
   padding: 1rem;
   border-radius: 5px;
@@ -33,7 +33,7 @@
 
 .createBtn {
   margin-top: 3rem;
-  background-color: #97BF0F;
+  background-color: #97bf0f;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -43,7 +43,7 @@
   .formBox input,
   .formBox select,
   .formBox button {
-  font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
@@ -51,10 +51,10 @@
   .formBox {
     width: 100%;
   }
-  
+
   .formBox input,
   .formBox select,
   .formBox button {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 }

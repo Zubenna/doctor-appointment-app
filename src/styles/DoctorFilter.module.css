@@ -5,11 +5,11 @@
   left: 0;
   top: 0;
 }
-  
+
 .img {
   width: 100%;
 }
-  
+
 .buttonText {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.2rem;
@@ -20,40 +20,40 @@
   font-weight: bold;
   width: 100%;
 }
-  
+
 .setSocial {
   color: #000;
   font-size: 1.3rem;
 }
-  
+
 .btnActive {
-  background-color:  #97BF0F;
+  background-color: #97bf0f;
   color: #fff;
 }
-  
+
 .socialHome {
   display: flex;
   justify-content: space-evenly;
   margin-top: auto;
   width: 80%;
 }
-  
+
 .logout {
   color: #fff;
-  background-color:  #97BF0F;
+  background-color: #97bf0f;
 }
-  
+
 .btnNon {
   background-color: #fff;
 }
-  
+
 .centerText {
   text-align: center;
   font-size: 1.2rem;
   font-family: 'Exo 2', sans-serif;
   margin-bottom: 2rem;
 }
-  
+
 .filterBox {
   height: auto;
   min-width: 20%;
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
 }
-  
+
 .buttonPosition {
   display: flex;
   flex-direction: column;
