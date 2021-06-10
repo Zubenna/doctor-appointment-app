@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import Routes from './Routes';
 import { userAccSuccess } from '../actions/userAction';
-import '../styles/App.css';
 
 const App = () => {
   const dispatch = useDispatch();
