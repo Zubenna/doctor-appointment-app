@@ -70,6 +70,10 @@ npm test
 ## Live Version
 Launch live version.
 - [Launch App](https://book-a-doctor.netlify.app/)
+Login with
+- username: Jbrown
+- password: memeee
+Or Register.
 
 ## Built With (Packages and tools)
 - React
