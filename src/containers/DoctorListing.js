@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { displayDoctors, filterDoctors } from '../actions/doctorAction';
+import { resetAppointments } from '../actions/appointmentAction';
 import { userLogout, userError } from '../actions/userAction';
 import DoctorComponent from '../components/DoctorComponent';
 import DoctorFilter from '../components/DoctorFilter';
@@ -12,6 +13,7 @@ import SliderShow from '../components/SliderShow';
 
 const DoctorListing = (props) => {
   const doctors = useSelector((state) => state.allDoctors.doctors);
+  // let appointments = useSelector((state) => state.appointments.appointments);
   const filter = useSelector((state) => state.filter);
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
@@ -34,12 +36,12 @@ const DoctorListing = (props) => {
   };
 
   const { history } = props;
-
   const handleLogout = () => {
     axios.delete(`${url}/logout`)
       .then((response) => {
         if (response.data.logged_out) {
           dispatch(userLogout(response));
+          dispatch(resetAppointments());
           localStorage.setItem('user', JSON.stringify({ username: 'Guest' }));
           history.push('/');
         }

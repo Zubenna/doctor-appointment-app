@@ -18,6 +18,12 @@ const appointment = (state = initialState, action) => {
       appointmentStatus: 'NOT_CREATED',
       appointments: action.payload,
     };
+
+    case 'RESET_APPOINTMENTS': return {
+      ...state,
+      appointments: [],
+    };
+
     default: return state;
   }
 };

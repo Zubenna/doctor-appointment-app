@@ -10,7 +10,19 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  margin: 10rem auto 0 auto;
+  margin: 5rem auto 0 auto;
+}
+
+.setMessage {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 3rem;
+}
+
+.setMessage h3 {
+  font-family: 'Exo 2', sans-serif;
+  color: #00BFFF; 
 }
 
 .signupForm input,

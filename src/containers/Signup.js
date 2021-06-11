@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import url from '../apiUrl/apiLink';
@@ -18,6 +19,7 @@ const Signup = (props) => {
   const [password, setPassword] = useState('');
   const [password_confirmation, setPConfirmation] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === 'fullname') {
@@ -40,6 +42,7 @@ const Signup = (props) => {
   const handleRegister = () => {
     const { history } = props;
     history.push('/login');
+    setLoading(false);
   };
 
   const userData = {
@@ -61,6 +64,7 @@ const Signup = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     signupProcess();
     if (email || password !== '') {
       setErrorMsg('');
@@ -71,6 +75,19 @@ const Signup = (props) => {
 
   return (
     <div className={Style.container}>
+      <div className={Style.setMessage}>
+        {loading ? (
+          <div>
+            <Loader
+              type="Circles"
+              color="#00BFFF"
+              height={40}
+              width={40}
+            />
+            <h3>Processing...</h3>
+          </div>
+        ) : <div />}
+      </div>
       <form className={Style.signupForm}>
         <input type="text" name="fullname" id="fname" value={full_name} onChange={handleChange} placeholder="Enter full name" required />
         <input type="text" name="username" id="uname" value={username} onChange={handleChange} placeholder="Enter username" required />

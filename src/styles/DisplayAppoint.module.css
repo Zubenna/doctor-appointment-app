@@ -19,6 +19,19 @@
   font-size: 1.4rem;
 }
 
+.setInfo {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 2rem;
+  margin-bottom: 3rem;
+}
+
+.setInfo h3 {
+  font-family: 'Exo 2', sans-serif;
+  color: #00BFFF; 
+}
+
 .font {
   font-family: 'Exo 2', sans-serif;
 }

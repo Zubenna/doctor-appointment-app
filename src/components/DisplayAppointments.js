@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import url from '../apiUrl/apiLink';
@@ -9,6 +9,7 @@ import Style from '../styles/DisplayAppoint.module.css';
 const DisplayAppointments = () => {
   const user = useSelector((state) => state.user.user);
   const appointments = useSelector((state) => state.appointments.appointments);
+  const [data, setData] = useState(false);
   const dispatch = useDispatch();
   const fetchAppointments = () => {
     axios.get(`${url}/appointments/${user.id}`)
@@ -20,15 +21,34 @@ const DisplayAppointments = () => {
       });
   };
 
+  const checkStatus = () => {
+    if (appointments.length === 0) {
+      setData(true);
+    } else {
+      setData(false);
+    }
+  };
+
   useEffect(() => {
     fetchAppointments();
   }, []);
+
+  useEffect(() => {
+    checkStatus();
+  }, [appointments]);
 
   return (
     /* eslint-disable camelcase */
     <section className={Style.setPage}>
       <BookNav />
       <div className={Style.listBox}>
+        <div className={Style.setInfo}>
+          {data ? (
+            <div>
+              <h3>No Appointment Booked</h3>
+            </div>
+          ) : <div />}
+        </div>
         <div>
           <h2 className={`${Style.font} ${Style.smallFont}`}>My Booked Appointment</h2>
           <div className={`${Style.rowHead} ${Style.font}`}>

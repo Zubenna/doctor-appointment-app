@@ -17,6 +17,11 @@ const filterDoctors = (specialty) => ({
   payload: specialty,
 });
 
+// const removeSelectedDoctor = () => ({
+//   type: FILTER_DOCTORS,
+//   payload: specialty,
+// });
+
 export {
   GET_DOCTORS, FILTER_DOCTORS, SELECTED_DOCTOR, displayDoctors, filterDoctors, selectedDoctor,
 };
