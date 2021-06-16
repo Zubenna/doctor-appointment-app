@@ -23,7 +23,7 @@ NB: The doctors' pictures are free pictures selected from the internet and store
 ![image](images/details-page.png)
 
 ## Apointment List Page
-![image](images/appointment-kist.png)
+![image](images/appointment-list.png)
 
 ## Tablet View Page
 ![image](images/tablet-view.png)
