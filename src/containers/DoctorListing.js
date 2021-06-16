@@ -13,7 +13,6 @@ import SliderShow from '../components/SliderShow';
 
 const DoctorListing = (props) => {
   const doctors = useSelector((state) => state.allDoctors.doctors);
-  // let appointments = useSelector((state) => state.appointments.appointments);
   const filter = useSelector((state) => state.filter);
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();

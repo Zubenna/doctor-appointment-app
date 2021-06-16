@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import DatePicker from 'react-datetime';
 import moment from 'moment';
-import SideNav from '../components/SideNav';
+import DatePicker from 'react-datetime';
+import SideNav from './SideNav';
 import 'react-datetime/css/react-datetime.css';
 import url from '../apiUrl/apiLink';
-import { bookAppointment } from '../actions/appointmentAction';
 import Style from '../styles/CreateAppointment.module.css';
 
-const CreateAppointment = (props) => {
+const EditAppointment = (props) => {
+  /* eslint-disable camelcase */
+  const appointment = useSelector((state) => state.appointments.appointment);
+  const {
+    id,
+    doctor_id,
+    user_id,
+    doctor_name,
+  } = appointment;
+  const [dt, setDt] = useState(moment());
+  const [location, setLocation] = useState('');
+  const appointment_date = dt;
+
   const LOCATIONS = [
     'Select location',
     'Lagos',
@@ -20,23 +31,13 @@ const CreateAppointment = (props) => {
     'Onitsha',
     'Owerrri',
   ];
-  /* eslint-disable camelcase */
-  const user = useSelector((state) => state.user.user);
-  const doctor = useSelector((state) => state.doctor);
-  const dispatch = useDispatch();
-  const user_id = user.id;
-  const doctor_id = doctor.id;
-  const [dt, setDt] = useState(moment());
-  const [location, setLocation] = useState('');
-  const appointment_date = dt;
-  const doctor_name = doctor.full_name;
 
   const handleClick = (event) => {
     const { value } = event.target;
     setLocation(value);
   };
 
-  const handleCreation = () => {
+  const handleEdit = () => {
     const { history } = props;
     history.push('/appointmentDisplay');
   };
@@ -44,17 +45,18 @@ const CreateAppointment = (props) => {
   const appointmentData = {
     doctor_id, user_id, appointment_date, location, doctor_name,
   };
-  const createAppointment = () => {
-    axios.post(`${url}/appointments`, appointmentData, { withCredentials: true })
+  const editAppointment = (id) => {
+    axios.patch(`${url}/appointments/${id}`, appointmentData, { withCredentials: true })
       .then((response) => {
-        dispatch(bookAppointment(response));
-        handleCreation();
+        if (response.data.status === 'SUCCESS') {
+          handleEdit();
+        }
       });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createAppointment();
+    editAppointment(id);
   };
 
   const yesterday = moment().subtract(1, 'day');
@@ -70,15 +72,15 @@ const CreateAppointment = (props) => {
           <select name="location" id="select" data-testid="areas" onChange={handleClick}>
             {LOCATIONS.map((city) => <option value={city} key={city}>{city}</option>)}
           </select>
-          <button type="submit" className={Style.createBtn} onClick={handleSubmit}>Create Appointment</button>
+          <button type="submit" className={Style.createBtn} onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </section>
   );
 };
 
-CreateAppointment.propTypes = {
+EditAppointment.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default CreateAppointment;
+export default EditAppointment;

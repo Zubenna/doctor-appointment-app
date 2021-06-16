@@ -7,6 +7,7 @@ import Login from '../containers/Login';
 import Cover from './Cover';
 import CreateAppointment from '../containers/CreateAppointment';
 import DisplayAppointments from './DisplayAppointments';
+import EditAppointment from './EditAppointment';
 
 const Routes = () => (
   <Router>
@@ -18,6 +19,7 @@ const Routes = () => (
       <Route path="/appointmentDisplay" component={DisplayAppointments} />
       <Route path="/doctor/:doctorId" component={DoctorDetails} />
       <Route path="/doctor" component={DoctorListing} />
+      <Route path="/edit" component={EditAppointment} />
     </Switch>
   </Router>
 );

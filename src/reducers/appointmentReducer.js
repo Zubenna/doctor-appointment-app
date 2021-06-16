@@ -24,7 +24,13 @@ const appointment = (state = initialState, action) => {
       appointments: [],
     };
 
-    default: return state;
+    case 'SELECT_APPOINTMENT':
+      return {
+        ...state,
+        appointment: action.payload,
+      };
+    default:
+      return state;
   }
 };
 

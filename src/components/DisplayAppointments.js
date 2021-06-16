@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import url from '../apiUrl/apiLink';
-import { loadAppointments } from '../actions/appointmentAction';
+import { loadAppointments, selectedAppointment } from '../actions/appointmentAction';
 import BookNav from './BookNav';
 import Style from '../styles/DisplayAppoint.module.css';
 
-const DisplayAppointments = () => {
+const DisplayAppointments = (props) => {
   const user = useSelector((state) => state.user.user);
   const appointments = useSelector((state) => state.appointments.appointments);
   const [data, setData] = useState(false);
   const dispatch = useDispatch();
+  const { history } = props;
   const fetchAppointments = () => {
     axios.get(`${url}/appointments/${user.id}`)
       .then((response) => {
@@ -19,6 +21,30 @@ const DisplayAppointments = () => {
       })
       .catch(() => {
       });
+  };
+
+  const deleteAppoint = (e) => {
+    const { id } = e.target;
+    axios.delete(`${url}/appointments/${id}`)
+      .then((response) => {
+        if (response.data.status === 'SUCCESS') {
+          history.push('/doctor');
+          history.push('/appointmentDisplay');
+        }
+      })
+      .catch(() => {
+      });
+  };
+
+  const handleEdit = (e) => {
+    const { id } = e.target;
+    appointments.forEach((x) => {
+      const xValue = (x.id).toString();
+      if (xValue === id) {
+        dispatch(selectedAppointment(x));
+      }
+    });
+    history.push('/edit');
   };
 
   const checkStatus = () => {
@@ -54,8 +80,8 @@ const DisplayAppointments = () => {
           <div className={`${Style.rowHead} ${Style.font}`}>
             <div>Doctor Name</div>
             <div>Appointment Date</div>
-            <div>City</div>
-            <div>Doctor ID</div>
+            <div className={Style.city}>City</div>
+            <div>Action</div>
           </div>
           { appointments.map((data) => (
             <div key={data.id} className={Style.itemBox}>
@@ -65,13 +91,20 @@ const DisplayAppointments = () => {
                   .toLocaleDateString()}
               </div>
               <div className={`${Style.data} ${Style.alignRight} ${Style.alignCol}`}>{data.location}</div>
-              <div className={`${Style.data} ${Style.alignRight}`}>{data.doctor_id}</div>
+              <div className={Style.setActionBtn}>
+                <button type="button" id={data.id} onClick={deleteAppoint}>Delete</button>
+                <button type="button" id={data.id} onClick={handleEdit}>Edit</button>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
+};
+
+DisplayAppointments.propTypes = {
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default DisplayAppointments;
