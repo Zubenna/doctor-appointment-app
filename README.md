@@ -7,6 +7,7 @@ NB: The doctors' pictures are free pictures selected from the internet and store
 - User can filter the list based on specialty.
 - User can see details of each doctor.
 - User can book appointments with any doctor on display.
+- User can delete or edit booked appointment.
 - User can register or create an account.
 - Registered users can log in with their username and password.
 
@@ -22,7 +23,7 @@ NB: The doctors' pictures are free pictures selected from the internet and store
 ![image](images/details-page.png)
 
 ## Apointment List Page
-![image](images/appointment-page.png)
+![image](images/appointment-kist.png)
 
 ## Tablet View Page
 ![image](images/tablet-view.png)
