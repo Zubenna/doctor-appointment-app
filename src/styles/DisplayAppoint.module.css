@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+.setPage {
+  display: flex;
+}
+
+.listBox {
+  background: #97bf0f;
+  text-align: center;
+  width: 100%;
+  padding-top: 3.5rem;
+}
+
+.rowHead {
+  display: flex;
+  width: 80%;
+  margin: 2rem auto 0.2rem auto;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.setInfo {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 2rem;
+  margin-bottom: 3rem;
+}
+
+.setInfo h3 {
+  font-family: 'Exo 2', sans-serif;
+  color: #00bfff;
+}
+
+.font {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.data {
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: rgb(34, 33, 33);
+  text-align: center;
+  width: 20%;
+}
+
+.dataDate {
+  width: 25%;
+}
+
+.itemBox {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.setActionBtn > button {
+  margin-right: 0.2rem;
+}
+
+.setActionBtn button {
+  font-size: 1.1rem;
+  font-family: 'Exo 2', sans-serif;
+  padding: 0.2rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .rowHead {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .smallFont {
+    font-size: 1.1rem;
+  }
+
+  .itemBox {
+    width: 100%;
+  }
+
+  .dataDate {
+    width: 30%;
+    text-align: right;
+  }
+
+  .listBox {
+    padding: 0.6rem;
+  }
+
+  .alignCol {
+    width: 30%;
+  }
+
+  .docName {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .data {
+    font-size: smaller;
+  }
+
+  .docName {
+    width: 30%;
+  }
+
+  .alignCol {
+    width: 20%;
+  }
+
+  .dataDate {
+    width: 25%;
+    text-align: right;
+  }
+
+  .rowHead {
+    font-size: 0.7rem;
+  }
+
+  .city {
+    display: none;
+  }
+
+  .setActionBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .setActionBtn > button {
+    margin-right: 0.1rem;
+  }
+
+  .setActionBtn button {
+    font-size: 0.6rem;
+  }
+}
