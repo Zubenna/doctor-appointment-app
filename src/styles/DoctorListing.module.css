@@ -1,0 +1,55 @@
+.displayDoctors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.container {
+  display: flex;
+  padding: 0.4rem;
+}
+
+.textCenter {
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.greyText {
+  color: rgb(97, 125, 152);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.setUsername {
+  text-align: right;
+  padding-right: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .textCenter {
+    margin-left: 0;
+  }
+
+  .displayDoctors {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .textCenter {
+    font-size: small;
+  }
+
+  .displayDoctors {
+    margin: 0 auto;
+  }
+}
