@@ -1,9 +1,11 @@
 .container {
   width: 96%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   margin: 0 auto;
   border: 2px solid #97bf0f;
   border-radius: 5px;
+  padding-bottom: 1rem;
 }
 
 .signupForm {
@@ -102,12 +104,38 @@
   .homeForm {
     width: 60%;
   }
+
+  .setTitle {
+    margin-top: 4rem;
+  }
+
+  .signupForm input,
+  .signupForm button {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .signupForm input {
+    height: 1.5rem;
+  }
+  .signupForm button {
+    height: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .setMessage {
+    margin-top: 2rem;
+  }
 }
 
 @media (max-width: 576px) {
   .signupForm {
     width: 80%;
   }
+
+  .setLinkBtn {
+    width: 6rem;
+  } 
 
   .homeForm {
     width: 80%;

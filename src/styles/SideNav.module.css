@@ -55,6 +55,10 @@
     font-size: 0.8rem;
     padding-top: 0.5rem;
   }
+
+  .socialHome {
+    padding-left: 0.8rem;
+  }
 }
 
 @media (max-width: 576px) {
