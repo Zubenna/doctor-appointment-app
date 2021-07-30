@@ -89,6 +89,7 @@
   .setInfo {
     margin-top: 0;
   }
+
   .dataDate {
     width: 30%;
     text-align: right;
@@ -107,11 +108,10 @@
     padding-left: 0;
   }
 
-  .data {    
+  .data {
     font-size: 1rem;
     width: 25%;
   }
-  
 
   .setActionBtn {
     display: flex;

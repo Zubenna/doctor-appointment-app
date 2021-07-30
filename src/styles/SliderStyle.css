@@ -112,7 +112,6 @@
 @media (max-width: 768px) {
   .Appx {
     max-width: 30rem;
-    margin-left: auto;
     margin-right: auto;
     margin-left: 3.2rem;
   }

@@ -118,6 +118,7 @@
   .signupForm input {
     height: 1.5rem;
   }
+
   .signupForm button {
     height: 2rem;
     margin-top: 0.5rem;
@@ -135,7 +136,7 @@
 
   .setLinkBtn {
     width: 6rem;
-  } 
+  }
 
   .homeForm {
     width: 80%;
