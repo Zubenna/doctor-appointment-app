@@ -94,6 +94,7 @@
 
   .nameDetail {
     left: 24rem;
+    width: 60%;
   }
 
   .noMargin {
@@ -110,6 +111,8 @@
 
   .bookApmnt {
     font-size: 0.9rem;
+    top: 3rem;
+    margin-bottom: 1rem;
   }
 }
 
