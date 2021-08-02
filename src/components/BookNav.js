@@ -13,7 +13,7 @@ const BookNav = () => (
     </div>
     <div className={Style.setLink}>
       <Link to="/doctor" className={Style.setNav}>Home</Link>
-      <Link to="/appointment" className={Style.setNav}>BOOK APPOINTMENT</Link>
+      <Link to="/appointment" className={Style.setNav}>Book Appointment</Link>
     </div>
     <div className={Style.socialHome}>
 

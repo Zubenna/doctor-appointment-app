@@ -13,7 +13,7 @@ const SideNav = () => (
     </div>
     <div className={Style.setLink}>
       <Link to="/doctor" className={Style.setNav}>Home</Link>
-      <Link to="/appointmentDisplay" className={Style.setNav}>APPOINTMENTS</Link>
+      <Link to="/appointmentDisplay" className={Style.setNav}>Appointments</Link>
     </div>
     <div className={Style.socialHome}>
 
