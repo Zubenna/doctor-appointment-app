@@ -45,6 +45,12 @@
   .formBox button {
     font-size: 1rem;
   }
+
+  .formContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 80%;
+  }
 }
 
 @media (max-width: 576px) {

@@ -66,7 +66,7 @@ const CreateAppointment = (props) => {
       <div className={Style.formContainer}>
         <form className={Style.formBox}>
           <input type="text" name="doctor_name" value={doctor_name} required />
-          <DatePicker data-testid="date" value={dt} timeFormat="hh:mm A" showTimeSelect isValidDate={disablePastDt} dateFormat="DD-MM-YYYY" onChange={(val) => setDt(val)} />
+          <DatePicker data-testid="date" id="data-testid" value={dt} timeFormat="hh:mm A" showTimeSelect isValidDate={disablePastDt} dateFormat="DD-MM-YYYY" onChange={(val) => setDt(val)} />
           <select name="location" id="select" data-testid="areas" onChange={handleClick}>
             {LOCATIONS.map((city) => <option value={city} key={city}>{city}</option>)}
           </select>
